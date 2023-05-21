@@ -11,6 +11,9 @@ function onSubmit(event) {
   const {
     elements: { email, message },
   } = event.currentTarget;
+  if (email.value === '' || password.value === '') {
+    return alert('Please fill in all the fields!');
+  }
   console.log({ email: email.value, message: message.value });
   event.currentTarget.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
